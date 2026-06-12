@@ -11,7 +11,7 @@
     "build": "pnpm run build:main && pnpm run build:renderer",
     "build:main": "tsc -p tsconfig.main.json",
     "build:renderer": "vue-tsc -b && vite build",
-    "electron": "electron .",
+    "electron": "cross-env NODE_ENV=development electron .",
     "package": "cross-env ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/ electron-builder",
     "package:dir": "cross-env ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/ electron-builder --dir"
   },
