@@ -1,0 +1,1 @@
+{"root":["./src/renderer/env.d.ts","./src/renderer/main.ts","./src/renderer/composables/useprinter.ts","./src/renderer/types/index.ts","./src/renderer/utils/format.ts","./src/renderer/app.vue","./src/renderer/components/printhistory.vue","./src/renderer/components/printerinfo.vue","./src/renderer/components/printertabs.vue"],"version":"5.8.3"}
