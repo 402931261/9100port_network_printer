@@ -48,132 +48,110 @@ defineEmits<{
 }>()
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .print-history {
   flex: 1;
   display: flex;
   flex-direction: column;
-}
 
-.history-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-}
+  .history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
 
-.history-header h3 {
-  margin: 0;
-  font-size: 16px;
-  color: #333;
-}
+    h3 {
+      margin: 0;
+      font-size: 16px;
+      color: #333;
+    }
 
-.clear-btn {
-  padding: 6px 12px;
-  border: 1px solid #f56c6c;
-  border-radius: 4px;
-  background: white;
-  color: #f56c6c;
-  cursor: pointer;
-  font-size: 12px;
-  transition: all 0.2s;
-}
+    .clear-btn {
+      padding: 6px 12px;
+      border: 1px solid #f56c6c;
+      border-radius: 4px;
+      background: white;
+      color: #f56c6c;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all 0.2s;
 
-.clear-btn:hover {
-  background: #fef0f0;
-}
+      &:hover { background: #fef0f0; }
+    }
+  }
 
-.empty-state {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  color: #999;
-}
+  .empty-state {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: #999;
 
-.empty-state p {
-  margin: 8px 0;
-}
+    p { margin: 8px 0; }
 
-.empty-state .hint {
-  font-size: 12px;
-}
+    .hint { font-size: 12px; }
+  }
 
-.history-list {
-  flex: 1;
-  overflow-y: auto;
-}
+  .history-list {
+    flex: 1;
+    overflow-y: auto;
+  }
 
-.history-item {
-  padding: 12px;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  margin-bottom: 8px;
-}
+  .history-item {
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 8px;
 
-.item-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 8px;
-}
+    .item-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
 
-.status-badge {
-  font-size: 12px;
-  padding: 2px 8px;
-  border-radius: 4px;
-}
+      .status-badge {
+        font-size: 12px;
+        padding: 2px 8px;
+        border-radius: 4px;
 
-.status-badge.sending {
-  background: #fff7e6;
-  color: #e6a23c;
-}
+        &.sending { background: #fff7e6; color: #e6a23c; }
+        &.success { background: #f0f9eb; color: #67c23a; }
+        &.failed  { background: #fef0f0; color: #f56c6c; }
+      }
 
-.status-badge.success {
-  background: #f0f9eb;
-  color: #67c23a;
-}
+      .time { font-size: 12px; color: #999; }
 
-.status-badge.failed {
-  background: #fef0f0;
-  color: #f56c6c;
-}
+      .delete-btn {
+        margin-left: auto;
+        padding: 4px 8px;
+        border: none;
+        background: transparent;
+        color: #999;
+        cursor: pointer;
+        font-size: 12px;
+        transition: color 0.2s;
 
-.time {
-  font-size: 12px;
-  color: #999;
-}
+        &:hover { color: #f56c6c; }
+      }
+    }
 
-.delete-btn {
-  margin-left: auto;
-  padding: 4px 8px;
-  border: none;
-  background: transparent;
-  color: #999;
-  cursor: pointer;
-  font-size: 12px;
-  transition: color 0.2s;
-}
+    .item-urls {
+      margin-bottom: 8px;
 
-.delete-btn:hover {
-  color: #f56c6c;
-}
+      .url-item {
+        font-size: 13px;
+        color: #666;
+        word-break: break-all;
+        padding: 4px 0;
+      }
+    }
 
-.item-urls {
-  margin-bottom: 8px;
-}
-
-.url-item {
-  font-size: 13px;
-  color: #666;
-  word-break: break-all;
-  padding: 4px 0;
-}
-
-.item-message {
-  font-size: 12px;
-  color: #999;
+    .item-message {
+      font-size: 12px;
+      color: #999;
+    }
+  }
 }
 </style>

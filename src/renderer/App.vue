@@ -83,51 +83,51 @@ body {
 }
 </style>
 
-<style scoped>
+<style lang="scss" scoped>
 .app {
   display: flex;
   flex-direction: column;
   height: 100vh;
   background: #f5f5f5;
-}
 
-.app-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 20px;
-  background: linear-gradient(135deg, #409eff 0%, #667eea 100%);
-  color: white;
-}
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #409eff 0%, #667eea 100%);
+    color: white;
 
-.app-header h1 {
-  font-size: 18px;
-  font-weight: 600;
-}
+    h1 {
+      font-size: 18px;
+      font-weight: 600;
+    }
 
-.header-info {
-  display: flex;
-  gap: 16px;
-}
+    .header-info {
+      display: flex;
+      gap: 16px;
 
-.ws-status {
-  font-size: 12px;
-  padding: 4px 10px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-}
+      .ws-status {
+        font-size: 12px;
+        padding: 4px 10px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+      }
+    }
+  }
 
-.app-main {
-  flex: 1;
-  padding: 16px;
-  overflow-y: auto;
-}
+  .app-main {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+  }
 
-.app-footer {
-  padding: 12px;
-  text-align: center;
-  background: #eee;
-  font-size: 12px;
-  color: #999;
+  .app-footer {
+    padding: 12px;
+    text-align: center;
+    background: #eee;
+    font-size: 12px;
+    color: #999;
+  }
 }
 </style>

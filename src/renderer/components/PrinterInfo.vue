@@ -69,88 +69,95 @@ defineEmits<{
 }>();
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .printer-info {
   padding: 16px;
   background: #fafafa;
   border-radius: 8px;
   margin-bottom: 16px;
-}
 
-.info-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
+  .info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
 
-.info-header h2 {
-  margin: 0;
-  font-size: 18px;
-  color: #333;
-}
+    h2 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
 
-.info-actions {
-  display: flex;
-  gap: 8px;
-}
+    .info-actions {
+      display: flex;
+      gap: 8px;
 
-.action-btn {
-  padding: 6px 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background: white;
-  cursor: pointer;
-  font-size: 12px;
-  transition: all 0.2s;
-}
+      .action-btn {
+        padding: 6px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background: white;
+        cursor: pointer;
+        font-size: 12px;
+        transition: all 0.2s;
 
-.action-btn:hover {
-  border-color: #409eff;
-  color: #409eff;
-}
+        &:hover {
+          border-color: #409eff;
+          color: #409eff;
+        }
 
-.action-btn.primary {
-  background: #409eff;
-  border-color: #409eff;
-  color: white;
-}
+        &.primary {
+          background: #409eff;
+          border-color: #409eff;
+          color: white;
 
-.action-btn.primary:hover {
-  background: #66b1ff;
-}
+          &:hover {
+            background: #66b1ff;
+          }
+        }
+      }
+    }
+  }
 
-.info-detail {
-  display: flex;
-  gap: 24px;
-}
+  .info-detail {
+    display: flex;
+    gap: 24px;
+    row-gap: 16px;
+    width: 100%;
+    overflow: hidden;
+    flex-wrap: wrap;
 
-.detail-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+    .detail-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
 
-.label {
-  font-size: 14px;
-  color: #999;
-}
+      .label {
+        font-size: 14px;
+        color: #999;
+        flex-shrink: 0;
+      }
+      .value {
+        font-size: 14px;
+        color: #333;
+      }
 
-.value {
-  font-size: 14px;
-  color: #333;
-}
-
-.status-text.online {
-  color: #67c23a;
-}
-
-.status-text.offline {
-  color: #f56c6c;
-}
-
-.status-text.unknown {
-  color: #909399;
+      .status-text {
+        &.online {
+          color: #67c23a;
+        }
+        &.offline {
+          color: #f56c6c;
+        }
+        &.unknown {
+          color: #909399;
+        }
+      }
+    }
+  }
 }
 
 .empty-printer {
@@ -159,17 +166,17 @@ defineEmits<{
   background: #fafafa;
   border-radius: 8px;
   margin-bottom: 16px;
-}
 
-.empty-text {
-  font-size: 16px;
-  color: #999;
-  margin: 0 0 8px;
-}
+  .empty-text {
+    font-size: 16px;
+    color: #999;
+    margin: 0 0 8px;
+  }
 
-.empty-hint {
-  font-size: 12px;
-  color: #ccc;
-  margin: 0;
+  .empty-hint {
+    font-size: 12px;
+    color: #ccc;
+    margin: 0;
+  }
 }
 </style>
