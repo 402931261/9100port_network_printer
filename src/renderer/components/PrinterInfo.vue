@@ -132,7 +132,7 @@ defineEmits<{
 
     .detail-row {
       display: flex;
-      align-items: center;
+      align-items: baseLine;
       gap: 8px;
 
       .label {
@@ -143,6 +143,7 @@ defineEmits<{
       .value {
         font-size: 14px;
         color: #333;
+        word-break: break-all;
       }
 
       .status-text {

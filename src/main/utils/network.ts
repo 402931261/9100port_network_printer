@@ -91,7 +91,7 @@ export function getSnmpInfo(ip: string): Promise<SnmpInfo> {
         } catch (_) {
           /* ignore */
         }
-        resolve({ name: "SNMP禁用", model: "未知型号" });
+        resolve({ name: "SNMP Disabled", model: "Unknown Model" });
       }, SNMP_TIMEOUT + 200);
 
       // sysName (1.3.6.1.2.1.1.5.0) + sysDescr (1.3.6.1.2.1.1.1.0)
@@ -108,18 +108,18 @@ export function getSnmpInfo(ip: string): Promise<SnmpInfo> {
           }
 
           if (err || !vb || vb.length < 2) {
-            resolve({ name: "SNMP禁用", model: "未知型号" });
+            resolve({ name: "SNMP Disabled", model: "Unknown Model" });
             return;
           }
 
           resolve({
-            name: vb[0]?.value?.toString().trim() || "未知名称",
-            model: vb[1]?.value?.toString().trim() || "未知型号",
+            name: vb[0]?.value?.toString().trim() || "Unknown Name",
+            model: vb[1]?.value?.toString().trim() || "Unknown Model",
           });
         },
       );
     } catch (_) {
-      resolve({ name: "SNMP禁用", model: "未知型号" });
+      resolve({ name: "SNMP Disabled", model: "Unknown Model" });
     }
   });
 }
@@ -146,7 +146,7 @@ export async function discoverPrintersViaMdns(): Promise<MdnsDevice[]> {
         .trim(),
     }));
   } catch (err) {
-    console.warn("mDNS 发现失败:", err instanceof Error ? err.message : err);
+    console.warn("mDNS discovery failed: ", err instanceof Error ? err.message : err);
     return [];
   }
 }
